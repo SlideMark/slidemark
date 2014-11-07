@@ -7,12 +7,20 @@
     <meta property="wb:webmaster" content="f5cf72c43a5da8ca" />
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    %link{:href => "/assets/stylesheets/footer.css", :rel => "stylesheet"}
+    %link{:href => "/assets/stylesheets/carousel.css", :rel => "stylesheet"}
+    %script{src: "/assets/src/ace.js", type: "text/javascript", charset: "utf-8"}
     = csrf_meta_tags
     %style#holderjs-style{:type => "text/css"}
   %body{:style => ""}
     = render 'layouts/navigation'
+    %br
+    %br
+    %br
+    %br
     .container
-      %p#notice= notice
+      - if notice.present?
+        .alert.alert-info#notice= notice
       = yield
-    -#= render 'layouts/footer'
+    = render 'layouts/footer'
 = debug(params) if Rails.env.development?
