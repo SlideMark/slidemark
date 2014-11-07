@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root to: "welcome#index"
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
 
-  get 'welcome/index'
-  root to: "welcome#index"
+  resources :posts do
+    member do
+      get :ppt
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

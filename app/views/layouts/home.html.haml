@@ -8,10 +8,6 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     %link{:href => "/assets/stylesheets/blog.css", :rel => "stylesheet"}
-    - if mobile_user_agent?
-      %link{:href => "/assets/stylesheets/carousel_mb.css", :rel => "stylesheet"}
-    - else
-      %link{:href => "/assets/stylesheets/carousel.css", :rel => "stylesheet"}
     %style#holderjs-style{:type => "text/css"}
   %body{:style => ""}
     = yield

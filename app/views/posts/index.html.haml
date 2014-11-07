@@ -1,0 +1,22 @@
+%h3 Posts
+
+-#%ul.nav.nav-tabs
+  -#%li{class: @brand.nil? ? 'active' : nil}= link_to "全部(#{@all_num})", visitor_goods_path()
+  -#%li{class: tab?(@brand, 'SKII')}= link_to "SKII(#{@skii_num})", brand_visitor_goods_path(brand: 'SKII')
+  -#%li{class: tab?(@brand, 'FANCL')}= link_to "FANCL(#{@fancl_num})", brand_visitor_goods_path(brand: 'FANCL')
+  -#%li{class: tab?(@brand, 'SUQQU')}= link_to "SUQQU(#{@suqqu_num})", brand_visitor_goods_path(brand: 'SUQQU')
+
+%table.table.table-condensed
+  %tr.info
+    %th 标题
+    %th 描述
+    %th 创建日期
+  - @posts.try(:each) do |post|
+    %tr
+      %td= link_to post.title, post_path(good)
+      %td= post.title
+      %td= post.created_at.to_s(:db)
+
+%center= paginate @posts if @posts.present?
+
+= link_to 'New Post', new_post_path, class: ['btn', 'btn-md', 'btn-primary']

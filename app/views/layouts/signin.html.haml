@@ -17,7 +17,8 @@
     %br
     %br
     .container
-      %p#notice= notice
+      - if flash[:alert].present?
+        .alert.alert-danger= flash[:alert]
       = yield
     = render 'layouts/footer'
 = debug(params) if Rails.env.development?

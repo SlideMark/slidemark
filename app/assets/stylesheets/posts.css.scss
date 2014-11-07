@@ -1,0 +1,28 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#editor {
+        width: 80%;
+        height: 600px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        float:left;
+        margin: 0 auto;
+        border: 5px solid #e6e4e0;
+        font-size: 16px
+    }
+#panel {
+        width: 20%;
+        height: 600px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+        float:right;
+        border: 5px solid #ff9933;
+    }
+
+
+
+
