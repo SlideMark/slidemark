@@ -14,7 +14,6 @@
           %ul.nav.navbar-nav
             %li= link_to 'ppts', posts_path, class: 'active'
             %li= link_to 'users', root_path
-            -#%li= link_to 'Music', visitor_musics_path
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                 其他
@@ -23,7 +22,7 @@
                 %li= link_to 'GitHub', 'https://github.com/SlideMark/slidemark'
                 %li= link_to 'blog', 'http://fdwills.com'
             - if user_signed_in?
-              %li= link_to "#{current_user.email}'s Home", root_path
+              %li= link_to "#{current_user.email}'s Home", home_user_path(current_user)
               %li= link_to 'logout', destroy_user_session_path, method: 'delete', :confirm => 'Are you sure to logout?'
             - else
               = form_for(:user, url: session_path(:user), html: { class: ['navbar-form', 'navbar-right'], role: 'form'}) do |t|

@@ -32,11 +32,15 @@ class Ability
 
     # Post control
     can :index, Post
-    if !user.new_record?    
+    if user.registered?
         can [:new, :create], Post
     end
     can [:show, :update, :destroy], Post, user_id: user.id
     can [:ppt], Post, status: 1
     can [:ppt], Post, user_id: user.id
+
+    # User control
+    can :home, User
+    can :list, User, user_id: user.id
   end
 end

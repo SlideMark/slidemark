@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     omniauth_callbacks: "users/omniauth_callbacks"
+    passwords: 'users/passwords',
   }
 
   resources :posts do
@@ -13,6 +14,17 @@ Rails.application.routes.draw do
       get :ppt
     end
   end
+
+  resources :users do
+    member do
+     get :home
+    end
+  end
+
+  namespace :users do
+    resources :posts
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
