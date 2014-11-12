@@ -1,4 +1,24 @@
-%p#notice= notice
+%h3 详细
+
+.pull-right
+  %td= link_to '删除', post_path(@post), method: :delete, data: { confirm: "确定删除 #{@post.title} 吗?" }, class: ['btn', 'btn-lg', 'btn-danger']
+
+%table.table.table-condensed
+  %tr
+    %th.col-sm-2 标题
+    %td= @post.title
+  %tr
+    %th.col-sm-2 作者
+    %td= @post.user.email 
+  %tr
+    %th.col-sm-2 修改日期
+    %td= @post.updated_at.to_s(:db)  
+  %tr
+    %th.col-sm-2 内容
+    %td= markdown(@post.content)
+  %tr
+    %th.col-sm-2 ppt
+    %td= link_to '点击链接查看ppt', ppt_post_path
 
 
 = link_to 'Edit', edit_post_path(@post)

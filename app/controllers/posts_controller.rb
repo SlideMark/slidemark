@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-  respond_to :html, :json
+  respond_to :html
   load_and_authorize_resource
+  layout 'ppt', only: ['ppt']
 
   def index
-    @posts = Post.all
+    @posts = Post.recent.page(params[:page])
     respond_with(@posts)
   end
 
@@ -41,6 +42,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title)
+      params.require(:post).permit(:title, :content)
     end
 end

@@ -13,7 +13,7 @@ gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-#gem 'ace-rails-ap'
+gem 'redcarpet'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'

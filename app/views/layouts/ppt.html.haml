@@ -1,15 +1,57 @@
-!!!
-%html
+<!doctype html>
+%html{:lang => "en"}
   %head
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'BIM'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Myapp'}"}
-    <meta property="wb:webmaster" content="f5cf72c43a5da8ca" />
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
-    %link{:href => "/assets/stylesheets/blog.css", :rel => "stylesheet"}
-    %style#holderjs-style{:type => "text/css"}
-  %body{:style => ""}
-    = render 'layouts/navigation'
-= debug(params) if Rails.env.development?
+    %meta{:charset => "utf-8"}/
+    %title= @post.title
+    %meta{content: @post.title, :name => "description"}/
+    %meta{content: @post.user.email, :name => "author"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %link{:href => "/assets/reveal/css/reveal.min.css", :rel => "stylesheet"}/
+    %link#theme{:href => "/assets/reveal/css/theme/default.css", :rel => "stylesheet"}/
+    / For syntax highlighting
+    %link{:href => "/assets/reveal/lib/css/zenburn.css", :rel => "stylesheet"}/
+    / If the query includes 'print-pdf', include the PDF print sheet
+    :javascript
+      if( window.location.search.match( /print-pdf/gi ) ) {
+      	var link = document.createElement( 'link' );
+      	link.rel = 'stylesheet';
+      	link.type = 'text/css';
+      	link.href = '/assets/reveal/css/print/pdf.css';
+      	document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    /[if lt IE 9]
+      <script src="/assets/reveal/lib/js/html5shiv.js"></script>
+  %body
+    .reveal
+      / Any section element inside of this container is displayed as a slide
+      .slides
+        %section{"data-markdown" => "", "data-separator" => "\\n---\\n$", "data-vertical" => "\\n--\\n"}
+          %script{:type => "text/template"}
+            = yield
+    %script{:src => "/assets/reveal/lib/js/head.min.js"}
+    %script{:src => "/assets/reveal/js/reveal.min.js"}
+    :javascript
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      	controls: true,
+      	progress: true,
+      	history: true,
+      	center: true,
+      	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      	// Parallax scrolling
+      	// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      	// parallaxBackgroundSize: '2100px 900px',
+      	// Optional libraries used to extend on reveal.js
+      	dependencies: [
+      		{ src: '/assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      		{ src: '/assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      		{ src: '/assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      		{ src: '/assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      		{ src: '/assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      		{ src: '/assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      	]
+      });

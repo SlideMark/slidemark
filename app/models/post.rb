@@ -3,8 +3,8 @@ class Post < ActiveRecord::Base
 
   scope :recent , -> { order('created_at DESC') }
   scope :open?, -> { where(status: ST_OPEN) }
-  #validates :title, present: true, length: [0..255]
-  validate :content, presents: true
+  validates :title, presence: true
+  validates :content, presence: true
 
   belongs_to :user
 

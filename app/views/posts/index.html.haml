@@ -9,15 +9,15 @@
 %table.table.table-condensed
   %tr.info
     %th 标题
-    %th 描述
-    %th 创建日期
     %th 作者
+    %th 修改日期
+    %th PPt
   - @posts.try(:each) do |post|
     %tr
       %td= link_to post.title, post_path(post)
-      %td= post.title
-      %td= post.created_at.to_s(:db)
       %td= post.user.email
+      %td= post.updated_at.to_s(:db)
+      %td= link_to '点击链接查看ppt', ppt_post_path(post)
 
 %center= paginate @posts if @posts.present?
 

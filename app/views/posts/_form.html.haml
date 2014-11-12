@@ -4,9 +4,14 @@
     = t.text_field :title, class: 'form-control', placeholder: '输入标题'
     %p.help-block Input title within 255 characters
 .form-group
+  = t.text_area :content
   #editor
   #panel
 %script
   var editor = ace.edit("editor");
+  var textarea = $('textarea[name="post[content]"]').hide();
   editor.setTheme("ace/theme/monokai");
   editor.getSession().setMode("ace/mode/markdown");
+  editor.getSession().on('change', function(){
+  textarea.val(editor.getSession().getValue());
+  });

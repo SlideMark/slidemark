@@ -18,8 +18,8 @@
     .container
       - if flash[:alert].present?
         .alert.alert-danger= flash[:alert]
-      - if devise_error_messages!.present?
-        .alert.alert-danger= devise_error_messages!
+      - if resource.errors.any?
+        = render partial: 'alert_error', locals: { model: resource }
       = yield
     = render 'layouts/footer'
 = debug(params) if Rails.env.development?

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  respond_to :html, :json
+  respond_to :html
   load_and_authorize_resource
 
   # for all
