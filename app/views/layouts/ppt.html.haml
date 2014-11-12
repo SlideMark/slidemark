@@ -1,17 +1,16 @@
-<!doctype html>
-%html{:lang => "en"}
+!!!
+%html
   %head
-    %meta{:charset => "utf-8"}/
-    %title= @post.title
-    %meta{content: @post.title, :name => "description"}/
-    %meta{content: @post.user.email, :name => "author"}/
-    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
-    %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
-    %link{:href => "/assets/reveal/css/reveal.min.css", :rel => "stylesheet"}/
-    %link#theme{:href => "/assets/reveal/css/theme/default.css", :rel => "stylesheet"}/
+    -# update this for chinese encoding problem
+    %title= content_for?(:title) ? yield(:title) : 'PPt'
+    %meta{content: @post.user.email, :name => "author"}
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+    %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+    %link{:href => "/assets/reveal/css/reveal.min.css", :rel => "stylesheet"}
+    %link#theme{:href => "/assets/reveal/css/theme/default.css", :rel => "stylesheet"}
     / For syntax highlighting
-    %link{:href => "/assets/reveal/lib/css/zenburn.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/reveal/lib/css/zenburn.css", :rel => "stylesheet"}
     / If the query includes 'print-pdf', include the PDF print sheet
     :javascript
       if( window.location.search.match( /print-pdf/gi ) ) {
