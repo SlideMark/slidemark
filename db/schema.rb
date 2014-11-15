@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106021207) do
+ActiveRecord::Schema.define(version: 20141113015346) do
 
   create_table "posts", force: true do |t|
     t.integer  "user_id",                          null: false
@@ -20,6 +20,34 @@ ActiveRecord::Schema.define(version: 20141106021207) do
     t.string   "tag"
     t.binary   "content",                          null: false
     t.integer  "setting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "settings", force: true do |t|
+    t.integer  "controls",                limit: 1, default: 1,         null: false
+    t.integer  "progress",                limit: 1, default: 1,         null: false
+    t.integer  "slideNumber",             limit: 1, default: 0,         null: false
+    t.integer  "history",                 limit: 1, default: 0,         null: false
+    t.integer  "keyboard",                limit: 1, default: 1,         null: false
+    t.integer  "overview",                limit: 1, default: 1,         null: false
+    t.integer  "center",                  limit: 1, default: 1,         null: false
+    t.integer  "touch",                   limit: 1, default: 1,         null: false
+    t.integer  "loop",                    limit: 1, default: 0,         null: false
+    t.integer  "rtl",                     limit: 1, default: 0,         null: false
+    t.integer  "fragments",               limit: 1, default: 1,         null: false
+    t.integer  "embedded",                limit: 1, default: 0,         null: false
+    t.integer  "autoSlide",               limit: 1, default: 1,         null: false
+    t.integer  "autoSlideStoppable",      limit: 1, default: 1,         null: false
+    t.integer  "mouseWheel",              limit: 1, default: 0,         null: false
+    t.integer  "hideAddressBar",          limit: 1, default: 1,         null: false
+    t.integer  "previewLinks",            limit: 1, default: 0,         null: false
+    t.string   "transition",                        default: "default", null: false
+    t.string   "transitionSpeed",                   default: "default", null: false
+    t.string   "backgroundTransition",              default: "default", null: false
+    t.integer  "viewDistance",            limit: 2,                     null: false
+    t.string   "parallaxBackgroundImage"
+    t.string   "parallaxBackgroundSize"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

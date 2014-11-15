@@ -9,23 +9,16 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     %link{:href => "/assets/stylesheets/carousel.css", :rel => "stylesheet"}
     %script{src: "/assets/src/ace.js", type: "text/javascript", charset: "utf-8"}
-    %link{:href => "/assets/stylesheets/site.css", :rel => "stylesheet"}
-    %link{:href => "/assets/stylesheets/pushy.css", :rel => "stylesheet"}
     = csrf_meta_tags
     %style#holderjs-style{:type => "text/css"}
   %body{:style => ""}
     = render 'layouts/navigation'
-    .site-overlay
-    #container
-      .menu-btn ☰ Menu
+    %br
+    %br
+    %br
+    %br
+    .container
       = render 'layouts/messages'
       = yield
-      %br
-      %br
-      %br
-      %br
-      %script{src: "/assets/src/pushy.js", type: "text/javascript", charset: "utf-8"}
-      = render 'layouts/footer'
-      = debug(params) if Rails.env.development?
-	  
-
+    = render 'layouts/footer'
+= debug(params) if Rails.env.development?
