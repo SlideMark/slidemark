@@ -1,5 +1,5 @@
 .form-group
-  = t.label :title, '标题(必须)', class: ['col-sm-1', 'control-label']
+  = t.label :title, "#{t('model.post.title')}(*)", class: ['col-sm-1', 'control-label']
   .col-sm-8
     = t.text_field :title, class: 'form-control', placeholder: '输入标题'
     %p.help-block Input title within 255 characters

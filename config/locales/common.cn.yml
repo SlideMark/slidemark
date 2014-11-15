@@ -1,0 +1,18 @@
+cn:
+  description: "SlideMark: 用Markdown分享幻灯片的平台"
+  navi:
+    ppt: "幻灯片"
+    user: "用户"
+    others: "其他"
+    home: "的主页"
+    logout:
+      title: "注销"
+      confirm: "确定注销吗？"
+    signin: "登录"
+    regist: "注册！"
+  try_now: "现在使用"
+  delete:
+    title: "删除"
+    confirm: "确定删除吗？"
+  create: "提交"
+  detail: "详细"

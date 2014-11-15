@@ -1,0 +1,18 @@
+jp:
+  description: "SlideMark: マークダウン記法でスライドをシェーアするプラットフォーム"
+  navi:
+    ppt: "PPTs"
+    user: "ユーザ"
+    others: "その他"
+    home: "のページ"
+    logout:
+      title: "ログアウト"
+      confirm: "ログアウトしますか？"
+    signin: "ログイン"
+    regist: "今すぐ登録！"
+  try_now: "今すぐ試します。"
+  delete:
+    title: "削除"
+    confirm: "削除していいですか？"
+  create: "作成"
+  detail: "詳細"

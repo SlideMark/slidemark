@@ -1,0 +1,9 @@
+cn:
+  model:
+    post:
+      title: "标题"
+      content: "内容"
+      update_at: "修改日期"
+      author: "作者"
+      show_ppt: "查看ppt"
+      tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"

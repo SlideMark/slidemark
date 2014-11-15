@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
 
   belongs_to :user
+  belongs_to :setting
 
   def open?
     self.status == ST_OPEN

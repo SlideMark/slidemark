@@ -1,23 +1,17 @@
 %h3 Posts
 
--#%ul.nav.nav-tabs
-  -#%li{class: @brand.nil? ? 'active' : nil}= link_to "全部(#{@all_num})", visitor_goods_path()
-  -#%li{class: tab?(@brand, 'SKII')}= link_to "SKII(#{@skii_num})", brand_visitor_goods_path(brand: 'SKII')
-  -#%li{class: tab?(@brand, 'FANCL')}= link_to "FANCL(#{@fancl_num})", brand_visitor_goods_path(brand: 'FANCL')
-  -#%li{class: tab?(@brand, 'SUQQU')}= link_to "SUQQU(#{@suqqu_num})", brand_visitor_goods_path(brand: 'SUQQU')
-
 %table.table.table-condensed
   %tr.info
-    %th 标题
-    %th 作者
-    %th 修改日期
-    %th PPt
+    %th= t('model.post.title')
+    %th= t('model.post.author')
+    %th= t('model.post.update_at')
+    %th
   - @posts.try(:each) do |post|
     %tr
       %td= link_to post.title, post_path(post)
       %td= post.user.email
       %td= post.updated_at.to_s(:db)
-      %td= link_to '点击链接查看ppt', ppt_post_path(post)
+      %td= link_to t('model.post.show_ppt'), ppt_post_path(post)
 
 %center= paginate @posts if @posts.present?
 

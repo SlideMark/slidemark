@@ -1,0 +1,9 @@
+en:
+  model:
+    post:
+      title: "Title"
+      content: "Content"
+      update_at: "Create Date"
+      author: "Author"
+      show_ppt: "View PPt"
+      tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"

@@ -1,24 +1,24 @@
-%h3 详细
+%h3= t('detail')
 
 .pull-right
-  %td= link_to '删除', post_path(@post), method: :delete, data: { confirm: "确定删除 #{@post.title} 吗?" }, class: ['btn', 'btn-lg', 'btn-danger']
+  %td= link_to t('delete.title'), post_path(@post), method: :delete, data: { confirm: t('delete.confirm') }, class: ['btn', 'btn-md', 'btn-danger']
 
 %table.table.table-condensed
   %tr
-    %th.col-sm-2 标题
+    %th.col-sm-2= t('model.post.title')
     %td= @post.title
   %tr
-    %th.col-sm-2 作者
+    %th.col-sm-2= t('model.post.author')
     %td= @post.user.email 
   %tr
-    %th.col-sm-2 修改日期
+    %th.col-sm-2= t('model.post.update_at')
     %td= @post.updated_at.to_s(:db)  
   %tr
-    %th.col-sm-2 内容
+    %th.col-sm-2= t('model.post.content')
     %td= markdown(@post.content)
   %tr
     %th.col-sm-2 ppt
-    %td= link_to '点击链接查看ppt', ppt_post_path
+    %td= link_to t('model.post.show_ppt'), ppt_post_path
 
 
 = link_to 'Edit', edit_post_path(@post)

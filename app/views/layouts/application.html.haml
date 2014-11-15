@@ -18,8 +18,7 @@
     .site-overlay
     #container
       .menu-btn ☰ Menu
-      - if notice.present?
-        .alert.alert-info#notice= notice
+      = render 'layouts/messages'
       = yield
       %br
       %br

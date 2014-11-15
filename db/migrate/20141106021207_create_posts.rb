@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer  "status",      limit: 1, default: 0, null: false
       t.string   "tag"
       t.binary   "content",                           null: false
-      t.integer  "setting_id"
+      t.integer  "setting_id",                        null: false
       t.timestamps
     end
   end

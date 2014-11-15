@@ -1,0 +1,9 @@
+jp:
+  model:
+    post:
+      title: "タイトル"
+      content: "内容"
+      update_at: "編集日付"
+      author: "作者"
+      show_ppt: "スライドを閲覧する"
+      tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"

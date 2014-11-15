@@ -1,7 +1,4 @@
-.alert.alert-info
-  TIPS: 
-  %p Use '---' to separate left-right pages
-  %p Use '--' to separate up-down pages
+.alert.alert-info= t('model.post.tips')
 
 - if @post.errors.any?
   = render partial: 'alert_error', locals: { model: @post }

@@ -7,8 +7,8 @@
     %li= link_to 'GitHub', 'https://github.com/SlideMark/slidemark'
     %li= link_to 'blog', 'http://fdwills.com'
     - if user_signed_in?
-      %li= link_to "#{current_user.email}'s Home", home_user_path(current_user)
-      %li= link_to 'logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure to logout?' }
+      %li= link_to "#{current_user.email}#{t('navi.home')}", home_user_path(current_user)
+      %li= link_to 'logout', destroy_user_session_path, method: :delete, data: { confirm: t('navi.logout.confirm')}
     - else
       = form_for(:user, url: session_path(:user), html: { class: ['navbar-form', 'navbar-right'], role: 'form'}) do |t|
         .form-group
@@ -16,6 +16,6 @@
         .form-group
           = t.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
         .form-group
-          = t.submit 'Sign in', class: ['btn-success', 'btn']
-          = link_to 'Regist!', new_user_registration_path, class: ['btn-link', 'btn']
-	  
+          = t.submit t('navi.signin'), class: ['btn-success', 'btn']
+          = link_to t('navi.regist'), new_user_registration_path, class: ['btn-link', 'btn']
+

@@ -1,7 +1,4 @@
 .jumbotron
   %h2 SildeMark
-  %p SlideMark is a platform to write ppts with markdown format.
-  - if user_signed_in?
-    = link_to 'Try now', new_post_path, class: [ 'btn', 'btn-primary', 'btn-lg']
-  - else
-    = link_to 'Try now', new_user_session_path, class: [ 'btn', 'btn-primary', 'btn-lg']
+  %p= t('description')
+  = link_to 'Try now', new_post_path, class: [ 'btn', 'btn-primary', 'btn-lg']

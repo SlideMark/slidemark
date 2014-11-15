@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_need_login
-    redirect_to new_user_session_url, flash: {alert: 'please login'}
+    redirect_to new_user_session_url, flash: {alert: I18n.t('devise.failure.unauthenticated')}
   end
 
   unless Rails.env.development?

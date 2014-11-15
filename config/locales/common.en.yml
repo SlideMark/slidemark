@@ -1,0 +1,18 @@
+en:
+  description: "SlideMark: a platform to write ppts with markdown format."
+  navi:
+    ppt: "PPTs"
+    user: "Users"
+    others: "Others"
+    home: "'s home"
+    logout:
+      title: "logout"
+      confirm: "Are you sure to logout"
+    signin: "Sign in"
+    regist: "Regist!"
+  try_now: "Try now"
+  delete:
+    title: "Delete"
+    confirm: "Are sure to delete it?"
+  create: "Submit"
+  detail: "Detail"
