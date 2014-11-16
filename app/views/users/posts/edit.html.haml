@@ -1,0 +1,14 @@
+.alert.alert-info
+  NOTICE: Editing post
+
+- if @post.errors.any?
+  = render partial: 'alert_error', locals: { model: @post }
+= form_for :post, method: 'put', url: post_path(@post), html: { class: 'form-horizontal', role: 'form' } do |t|
+  = render partial: 'form', locals: { t: t}
+  .form-group
+    %center
+      = t.submit 'save', class: ['btn', 'btn-lg', 'btn-primary']
+
+= link_to 'Show', @post
+\|
+= link_to 'Back', posts_path
