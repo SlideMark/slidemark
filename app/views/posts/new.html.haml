@@ -1,4 +1,6 @@
-.alert.alert-info= t('model.post.tips')
+.alert.alert-info
+  %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+  = content_tag :div, t('model.post.tips')
 
 - if @post.errors.any?
   = render partial: 'alert_error', locals: { model: @post }

@@ -6,12 +6,14 @@
     %th= t('model.post.author')
     %th= t('model.post.update_at')
     %th
+    %th
   - @posts.try(:each) do |post|
     %tr
       %td= link_to post.title, post_path(post)
       %td= post.user.email
       %td= post.updated_at.to_s(:db)
       %td= link_to t('model.post.show_ppt'), post_path(post)
+      %td= link_to 'Edit', edit_post_path(post)
 
 %center= paginate @posts if @posts.present?
 
