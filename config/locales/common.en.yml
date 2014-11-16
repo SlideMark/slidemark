@@ -9,7 +9,7 @@ en:
       title: "logout"
       confirm: "Are you sure to logout"
     signin: "Sign in"
-    regist: "Regist!"
+    regist: "Sign Up"
   try_now: "Try now"
   delete:
     title: "Delete"

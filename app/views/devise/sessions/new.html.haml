@@ -1,5 +1,9 @@
+.container.text-center
+  - resource_class.omniauth_providers.each do |provider|
+    .btn.btn-lg.btn-primary= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin', role: 'form', align: 'center'}) do |f|
-  %h2.form-signin-heading Please sign in
+  %hr
+  %h5.form-signin-heading or sign in with Email
   = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email'
   = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'password'
   - if devise_mapping.rememberable?
@@ -8,6 +12,6 @@
       .col-sm-8
         = f.label :remember_me
   .form-group
-    = f.submit "Log in",  class: ['btn', 'btn-md', 'btn-primary']
+    = f.submit "Log in",  class: ['btn', 'btn-lg', 'btn-primary']
   .form-group
     = render "devise/shared/links"
