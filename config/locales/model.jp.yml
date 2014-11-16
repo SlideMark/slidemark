@@ -7,3 +7,5 @@ jp:
       author: "作者"
       show_ppt: "スライドを閲覧する"
       tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"
+      update:
+        success: "PPtを更新成功しました。"

@@ -7,3 +7,5 @@ cn:
       author: "作者"
       show_ppt: "查看ppt"
       tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"
+      update:
+        success: "PPt更新成功."

@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
 
     def check_self
-      if current.nil? || (current_user.id != params[:user_id])
+      if current_user.nil? || (current_user.id != params[:user_id])
         raise CanCan::AccessDenied
       end
     end
