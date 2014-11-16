@@ -35,9 +35,10 @@ class Ability
     if user.registered?
         can [:new, :create], Post
     end
-    can [:show, :update, :destroy], Post, user_id: user.id
-    can [:ppt], Post, status: 1
-    can [:ppt], Post, user_id: user.id
+
+    can [:update, :destroy], Post, user_id: user.id
+    can [:show], Post, status: 1
+    can [:show], Post, user_id: user.id
 
     # User control
     can :home, User

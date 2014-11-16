@@ -1,10 +1,10 @@
-class PostsController < ApplicationController
+class User::PostsController < UsersController
   respond_to :html
   load_and_authorize_resource
   layout 'ppt', only: ['show']
 
   def index
-    @posts = Post.recent.page(params[:page])
+    @posts = current_user.posts.recent.page(params[:page])
     respond_with(@posts)
   end
 

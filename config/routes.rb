@@ -9,11 +9,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
 
-  resources :posts do
-    member do
-      get :ppt
-    end
-  end
+  resources :posts
 
   resources :users do
     member do
@@ -21,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :users do
+  resources :users do
     resources :posts
   end
 
