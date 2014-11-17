@@ -7,12 +7,81 @@
   = t.text_area :content, value: utf8(@post.content)
   #editor
   #panel
+    .form-control     
+      = t.check_box :s_controls
+      = t.label :s_controls, " Display controls"
+    .form-control 
+      = t.check_box :s_progress
+      = t.label :s_progress, "Display Progress Bar"
+    .form-control 
+      = t.check_box :s_slideNumber
+      = t.label :s_slideNumber, "Display Slide Page Number"
+    .form-control 
+      = t.check_box :s_history
+      = t.label :s_history, "Push slide change to history"
+    .form-control 
+      = t.check_box :s_keyboard
+      = t.label :s_keyboard, "Enable keyboard"
+    .form-control 
+      = t.check_box :s_overview
+      = t.label :s_overview, "Enable Slide Overview "
+    .form-control 
+      = t.check_box :s_center
+      = t.label :s_center, "Vertical Centering of Slides"
+    .form-control 
+      = t.check_box :s_loop
+      = t.label :s_loop, "Loop the Presentation"
+    .form-control 
+      = t.check_box :s_rtl
+      = t.label :s_rtl, "Change to be RTL"
+    .form-control 
+      = t.check_box :s_fragments
+      = t.label :s_fragments, "Turns fragments on"
+    .form-control 
+      = t.check_box :s_embedded
+      = t.label :s_embedded, "Embedded mode,"
+    .form-control 
+      = t.check_box :s_autoSlideStoppable
+      = t.label :s_autoSlideStoppable, "Stop Auto-sliding After Input"
+    .form-control 
+      = t.check_box :s_mouseWheel
+      = t.label :s_mouseWheel, "Enable Mouse Wheel"
+    .form-control 
+      = t.check_box :s_hideAddressBar
+      = t.label :s_hideAddressBar, "Hides Address on Mobile Devices"
+    .form-control 
+      = t.check_box :s_previewLinks
+      = t.label :s_previewLinks, "Opens Links in Iframe Preview"
+    .div 
+      = t.label :s_viewDistance, "Number of Visible Slides"
+      = t.number_field :s_viewDistance, default: 3, class: 'form-control'
+    .div 
+      = t.label :s_autoSlide, "Auto Slide Time(millisecond)"
+      = t.number_field :s_autoSlide, default: 0, class: 'form-control'
+    %div
+      = t.label :s_theme, "Theme"
+      = t.select :s_theme, @post.theme_select, {default: "default"}, class: 'form-control'
+    %div
+      = t.label :s_transition, "Transition style"
+      = t.select :s_transition, @post.transition_select, {default: "default"},  class: 'form-control'
+    %div
+      = t.label :s_transitionSpeed, "Transition speed"
+      = t.select :s_transitionSpeed, @post.transition_speed_select, {default: "default"},  class: 'form-control'
+    %div
+      = t.label :s_backgroundTransition, "Transition style for backgrounds"
+      = t.select :s_backgroundTransition, @post.background_transition_select, {default: "default"},  class: 'form-control'
+    %div
+      = t.label :s_parallaxBackgroundImage, "Parallax background image"
+      = t.text_field :s_parallaxBackgroundImage, default: "", placeholder: "image url", class: 'form-control'
+    %div
+      = t.label :s_parallaxBackgroundSize, "Parallax background size"
+      = t.text_field :s_parallaxBackgroundSize, default: "", placeholder: "eg. 2100px 900px", class: 'form-control'
 %script
   var editor = ace.edit("editor");
   var textarea = $('textarea[name="post[content]"]').hide();
   editor.setTheme("ace/theme/monokai");
   editor.getSession().setMode("ace/mode/markdown");
-  editor.setValue(textarea.html(), -1);
+  editor.setValue(textarea.val(), -1);
   editor.getSession().on('change', function(){
   textarea.val(editor.getSession().getValue());
   });

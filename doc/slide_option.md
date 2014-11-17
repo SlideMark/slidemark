@@ -81,6 +81,9 @@ Reveal.initialize({
     // Opens links in an iframe preview overlay
     previewLinks: false,
 
+    // Change the presentation direction to be RTL
+    theme: 'default',
+    
     // Transition style
     transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
 

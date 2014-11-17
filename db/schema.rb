@@ -11,17 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113015346) do
+ActiveRecord::Schema.define(version: 20141116015346) do
 
   create_table "posts", force: true do |t|
-    t.integer  "user_id",                          null: false
-    t.string   "title",                            null: false
-    t.integer  "status",     limit: 1, default: 0, null: false
+    t.integer  "user_id",                                                 null: false
+    t.string   "title",                                                   null: false
+    t.integer  "status",                    limit: 1, default: 0,         null: false
     t.string   "tag"
-    t.binary   "content",                          null: false
-    t.integer  "setting_id"
+    t.binary   "content",                                                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "s_controls",                limit: 1, default: 1,         null: false
+    t.integer  "s_progress",                limit: 1, default: 1,         null: false
+    t.integer  "s_slideNumber",             limit: 1, default: 0,         null: false
+    t.integer  "s_history",                 limit: 1, default: 0,         null: false
+    t.integer  "s_keyboard",                limit: 1, default: 1,         null: false
+    t.integer  "s_overview",                limit: 1, default: 1,         null: false
+    t.integer  "s_center",                  limit: 1, default: 1,         null: false
+    t.integer  "s_touch",                   limit: 1, default: 1,         null: false
+    t.integer  "s_loop",                    limit: 1, default: 0,         null: false
+    t.integer  "s_rtl",                     limit: 1, default: 0,         null: false
+    t.integer  "s_fragments",               limit: 1, default: 1,         null: false
+    t.integer  "s_embedded",                limit: 1, default: 0,         null: false
+    t.integer  "s_autoSlide",                         default: 0,         null: false
+    t.integer  "s_autoSlideStoppable",      limit: 1, default: 1,         null: false
+    t.integer  "s_mouseWheel",              limit: 1, default: 0,         null: false
+    t.integer  "s_hideAddressBar",          limit: 1, default: 1,         null: false
+    t.integer  "s_previewLinks",            limit: 1, default: 0,         null: false
+    t.integer  "s_viewDistance",            limit: 2, default: 3,         null: false
+    t.string   "s_transition",                        default: "default", null: false
+    t.string   "s_transitionSpeed",                   default: "default", null: false
+    t.string   "s_theme",                             default: "default", null: false
+    t.string   "s_backgroundTransition",              default: "default", null: false
+    t.string   "s_parallaxBackgroundImage"
+    t.string   "s_parallaxBackgroundSize"
   end
 
   create_table "settings", force: true do |t|

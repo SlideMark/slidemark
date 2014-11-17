@@ -3,6 +3,7 @@ cn:
   navi:
     ppt: "我的幻灯片"
     user: "用户"
+    help: "帮助"
     others: "其他"
     home: "的主页"
     logout:

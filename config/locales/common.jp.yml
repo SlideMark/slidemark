@@ -3,6 +3,7 @@ jp:
   navi:
     ppt: "私のPPTs"
     user: "ユーザ"
+    help: "ヘルプ"
     others: "その他"
     home: "のページ"
     logout:

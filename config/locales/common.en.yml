@@ -3,6 +3,7 @@ en:
   navi:
     ppt: "My PPT"
     user: "Users"
+    help: "Help"
     others: "Others"
     home: "'s home"
     logout:

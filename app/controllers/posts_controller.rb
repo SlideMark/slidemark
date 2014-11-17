@@ -13,20 +13,25 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new.decorate
     respond_with(@post)
   end
 
   def edit
+    @post = @post.decorate
   end
 
   def create
-    @post = Post.new(post_params.merge(user_id: current_user.id))
-    @post.save
+    @post = Post.new(post_params.merge(user_id: current_user.id)).decorate
+    if @post.save
+      redirect_to posts_url, flash: {notice: I18n.t('model.post.create.success')}
+      return
+    end
     respond_with(@post)
   end
 
   def update
+    @post = @post.decorate
     if @post.update(post_params)
       redirect_to edit_post_url, flash: {notice: I18n.t('model.post.update.success')}
       return
@@ -41,6 +46,10 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :s_controls, :s_progress, :s_slideNumber,
+        :s_history, :s_keyboard, :s_overview, :s_center, :s_loop, :s_rtl, :s_fragments, :s_embedded, :s_autoSlide,
+        :s_autoSlideStoppable, :s_mouseWheel, :s_hideAddressBar, :s_previewLinks, :s_transition,
+        :s_transitionSpeed, :s_backgroundTransition, :s_theme, :s_viewDistance,
+        :s_parallaxBackgroundImage, :s_parallaxBackgroundSize)
     end
 end
