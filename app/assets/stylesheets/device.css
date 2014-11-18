@@ -1,0 +1,19 @@
+.or{
+  margin-top: -30px;
+  margin-left: 70px;
+  background:white;
+  display:block;
+  width: 160px;
+}
+.align-fb-login{
+  margin-left:-15px;
+}
+
+.align-shared-links{
+  display:inline;
+}
+
+.white-space {
+  display:inline;
+  color:white;
+}
