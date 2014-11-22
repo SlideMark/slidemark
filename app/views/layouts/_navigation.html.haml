@@ -22,6 +22,7 @@
           - else
             %ul.nav.navbar-nav
               %li= link_to t('navi.ppt'), new_user_session_path, class: 'active'
+              %li= link_to t('navi.help'), '#'
             = form_for(:user, url: session_path(:user), html: { class: ['navbar-form', 'navbar-right'], role: 'form'}) do |t|
               .form-group
                 = t.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'

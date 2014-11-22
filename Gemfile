@@ -14,6 +14,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'redcarpet'
+gem 'bootstrap-modal-rails'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'

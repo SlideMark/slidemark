@@ -22,7 +22,7 @@
     .form-control 
       = t.check_box :s_keyboard
       = t.label :s_keyboard, "Enable keyboard"
-    .form-control 
+    -#.form-control 
       = t.check_box :s_overview
       = t.label :s_overview, "Enable Slide Overview "
     .form-control 
@@ -31,13 +31,13 @@
     .form-control 
       = t.check_box :s_loop
       = t.label :s_loop, "Loop the Presentation"
-    .form-control 
+    -#.form-control 
       = t.check_box :s_rtl
       = t.label :s_rtl, "Change to be RTL"
-    .form-control 
+    -#.form-control 
       = t.check_box :s_fragments
       = t.label :s_fragments, "Turns fragments on"
-    .form-control 
+    -#.form-control 
       = t.check_box :s_embedded
       = t.label :s_embedded, "Embedded mode,"
     .form-control 
@@ -49,10 +49,10 @@
     .form-control 
       = t.check_box :s_hideAddressBar
       = t.label :s_hideAddressBar, "Hides Address on Mobile Devices"
-    .form-control 
+    -#.form-control 
       = t.check_box :s_previewLinks
       = t.label :s_previewLinks, "Opens Links in Iframe Preview"
-    .div 
+    -#.div 
       = t.label :s_viewDistance, "Number of Visible Slides"
       = t.number_field :s_viewDistance, default: 3, class: 'form-control'
     .div 
