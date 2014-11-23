@@ -1,0 +1,11 @@
+.alert.alert-info
+  %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+  = content_tag :div, t('model.post.tips')
+
+- if @post.errors.any?
+  = render partial: 'alert_error', locals: { model: @post }
+= form_for :post, method: 'post', url: admin_user_posts_path(current_user), html: { class: 'form-horizontal', role: 'form' } do |t|
+  = render partial: 'form', locals: { t: t}
+  .form-group
+    %center
+      = t.submit 'save', class: ['btn', 'btn-lg', 'btn-primary']

@@ -1,6 +1,3 @@
-//https://github.com/petethepig/github-ribbons-css
--#.ribbon.right.red.top
-  %a{:href => "https://github.com/SlideMark/slidemark"} Fork me on GitHub
 .jumbotron
   .container
     %br
@@ -8,53 +5,11 @@
     %br
     %h1 SildeMark
     %p= t('description')
-    = link_to 'Try now', new_post_path, class: [ 'btn', 'btn-primary', 'btn-lg'], role:['button']
+    = link_to 'Try now', user_signed_in? ? new_admin_user_post_path(current_user) : new_user_session_path, class: [ 'btn', 'btn-primary', 'btn-lg'], role:['button']
 
-.container
-  .row
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR      
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR       
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR
-  .row
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR      
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR       
-    .col-md-4
-      %img{:alt => "", :height => "300", :src => "", :width => "320"}/
-      %p
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Facebook share      
-        %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-        %a.btn.btn-default{:href => "#", :role => "button"} QR
-      
-      
-  %hr/
+- @posts.each_slice(3) do |sub_posts|
+  .container
+    .row= render partial: 'ppt', locals: { posts: sub_posts}    
+    %hr/
+
+%center= paginate @posts if @posts.present?

@@ -8,6 +8,12 @@ jp:
       show_ppt: "閲覧する"
       tips: "使用提示：\n分隔左右页控制符：---\n分隔上下页控制符：--"
       update:
-        success: "PPtを更新成功しました。"
+        success: "PPtを更新しました。"
       create:
         success: "PPtを新規成功しました。"
+      publish:
+        confirm: "PPTを公開してよろしいですか？"
+        success: "PPtを公開しました"
+      delete:
+        confirm: "PPTを削除してよろしいですか？"
+        success: "PPtを削除しました。"

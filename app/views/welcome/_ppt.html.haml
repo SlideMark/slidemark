@@ -1,0 +1,8 @@
+- posts.each do |post|
+  .col-md-4
+    = link_to image_tag(post.cover_page_url, {height: 220, width:320}), post_path(post)
+    %p
+    %p
+      %a.btn.btn-default.fb_share{:role => "button"} Facebook share      
+      %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
+      %a.btn.btn-default{:href => "#", :role => "button"} QR  

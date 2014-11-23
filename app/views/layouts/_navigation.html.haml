@@ -12,12 +12,12 @@
         .navbar-collapse.collapse
           - if user_signed_in?
             %ul.nav.navbar-nav
-              %li= link_to t('navi.ppt'), user_posts_path(current_user), class: 'active'
+              %li= link_to t('navi.ppt'), admin_user_posts_path(current_user), class: 'active'
               %li= link_to t('navi.help'), '#'
               %li
                 %input#inputSearch.form-control{:placeholder => "Search", :type => "search"}/
             %ul.nav.navbar-nav.navbar-right
-              %li= link_to "#{current_user.email}#{t('navi.home')}", home_user_path(current_user)
+              %li= link_to "#{current_user.email}#{t('navi.home')}", admin_user_posts_path(current_user)
               %li= link_to t('navi.logout.title'), destroy_user_session_path, method: :delete, data: { confirm: t('navi.logout.confirm') }
           - else
             %ul.nav.navbar-nav

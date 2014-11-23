@@ -36,7 +36,7 @@ class Ability
         can [:new, :create], Post
     end
 
-    can [:update, :destroy], Post, user_id: user.id
+    can [:update, :destroy, :change_status], Post, user_id: user.id
     can [:show], Post, status: 1
     can [:show], Post, user_id: user.id
 

@@ -17,3 +17,9 @@
 //= require bootstrap
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
+$(".fb_share").click(function(){
+  FB.ui({
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  }, function(response){});
+});

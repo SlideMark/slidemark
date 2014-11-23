@@ -10,6 +10,9 @@
 # 安装mysql
 brew install mysql
 
+# 截屏需要
+brew install qt
+
 # 启动mysql, socket 在/tmp/mysql.socket
 mysqld
 

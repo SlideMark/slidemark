@@ -8,7 +8,7 @@
   .form-group
     %center
       = t.submit 'save', class: ['btn', 'btn-lg', 'btn-primary']
-
+      = link_to t('model.post.show_ppt'), post_path, class: ['btn', 'btn-lg', 'btn-info']
 = link_to 'Show', @post
 \|
 = link_to 'Back', posts_path

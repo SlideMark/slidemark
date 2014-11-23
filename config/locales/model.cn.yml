@@ -11,3 +11,9 @@ cn:
         success: "PPt更新成功."
       create:
         success: "PPt创建成功."
+      publish:
+        confirm: "公开你的PPt吗？"
+        success: "PPt公开成功"
+      delete:
+        confirm: "确定删除这张PPT吗？"
+        success: "PPt已成功删除"

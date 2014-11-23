@@ -11,3 +11,9 @@ en:
         success: "PPt successfully updated."
       create:
         success: "PPt successfully created."
+      publish:
+        confirm: "Are you sure to publish your PPt?"
+        success: "PPt publish successfully."
+      delete:
+        confirm: "Are you sure to delete this ppt?"
+        success: "PPt delete successfully."

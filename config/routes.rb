@@ -11,14 +11,14 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  resources :users do
-    member do
-     get :home
+  namespace :admin do
+    resources :users do
+      resources :posts do
+        member do 
+          put 'change_status'
+        end
+      end
     end
-  end
-
-  resources :users do
-    resources :posts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
