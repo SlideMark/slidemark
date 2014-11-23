@@ -39,7 +39,7 @@ class Admin::PostsController < AdminController
   end
 
   def change_status
-    @post.update(status: params[:status].to_i)
+    @post.publish
     redirect_to admin_user_posts_path, flash: {notice: I18n.t('model.post.publish.success')}
   end
 

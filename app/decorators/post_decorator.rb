@@ -10,7 +10,7 @@ class PostDecorator < Draper::Decorator
   #     end
   #   end
 
-  THEMES = ['default','simple', 'beige', 'blood', 'moon', 'serif',
+  THEMES = ['default', 'simple', 'beige', 'blood', 'moon', 'serif',
    'sky', 'beige', 'night', 'solarized']
 
   TRANSITIONS =['default', 'cube', 'page', 'concave', 'zoom', 'linear', 'fade', 'none']

@@ -4,6 +4,6 @@
     %p
     %p    
       = link_to 'Edit', edit_admin_user_post_path(current_user, post), class: ['btn', 'btn-default']
-      = link_to 'Pub', change_status_admin_user_post_path(current_user, post, status: 1), method: :put, class: ['btn', 'btn-default'], data: { confirm: t('model.post.publish.confirm') }
-      %a.btn.btn-default{:href => "#", :role => "button"} Share 
+      = link_to 'Pub', change_status_admin_user_post_path(current_user, post, status: 1), method: :put, class: ['btn', 'btn-default'], data: { confirm: t('model.post.publish.confirm') }, disabled: post.open? ? true : false
+      = link_to 'Share', edit_admin_user_post_path(current_user, post), class: ['btn', 'btn-default']
       = link_to 'Delete', admin_user_post_path(current_user, post), method: :delete, class: ['btn', 'btn-default'], data: { confirm: t('model.post.delete.confirm') }

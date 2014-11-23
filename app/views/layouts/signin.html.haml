@@ -18,7 +18,6 @@
       - if resource.errors.any?
         %script
           BootstrapDialog.alert('I want banana!');
-        -#= render partial: 'alert_error', locals: { model: resource }
       = render 'layouts/messages'
       = yield
     = render 'layouts/footer'

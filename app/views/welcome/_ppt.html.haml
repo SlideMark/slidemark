@@ -5,4 +5,4 @@
     %p
       %a.btn.btn-default.fb_share{:role => "button"} Facebook share      
       %a.btn.btn-default{:href => "#", :role => "button"} Linkedin share      
-      %a.btn.btn-default{:href => "#", :role => "button"} QR  
+      = link_to 'QR', post.qr_image_path, class: ['btn', 'btn-default']
