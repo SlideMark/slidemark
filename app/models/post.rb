@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   ST_OPEN = 1
   SEED = 'Ting'
   QR_SIZE = 300
+
   after_save :screen_shot
   scope :recent , -> { order('created_at DESC') }
   scope :opened, -> { where(status: ST_OPEN) }
@@ -33,6 +34,8 @@ class Post < ActiveRecord::Base
   end
 
   def screen_shot
-    self.content.split(/--/)[0]
+    #browser = Capybara::Webkit::Driver.new('web_capture').browser
+    #browser.visit 'http://qiita.com/'
+    #browser.render('qiita.png', 1280, 650)
   end
 end

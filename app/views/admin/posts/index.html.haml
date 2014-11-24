@@ -5,12 +5,14 @@
   .glyphicon.glyphicon-user
   My PPT
 = render 'layouts/messages'
-- @posts.each_slice(4) do |sub_posts|
-  .container
-    .row= render partial: 'ppt', locals: { posts: sub_posts}    
-    %hr/
 
-%center= paginate @posts if @posts.present?
+- if @posts.present?
+  - @posts.each_slice(4) do |sub_posts|
+    .container
+      .row= render partial: 'ppt', locals: { posts: sub_posts}    
+      %hr/
+
+  %center= paginate @posts
 
 .container
   .pull-right= link_to 'Add New', new_admin_user_post_path(current_user), class: ['btn', 'btn-lg', 'btn-warning']
