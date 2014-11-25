@@ -1,5 +1,5 @@
 .editor-container
-  .form-group
+  -#.form-group
     = t.label :title, "#{t('model.post.title')}(*)", class: ['col-sm-1', 'control-label']
     .col-sm-8
       = t.text_field :title, value: utf8(@post.title), class: 'form-control', placeholder: 'Input title'

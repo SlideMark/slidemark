@@ -35,6 +35,10 @@ class PostDecorator < Draper::Decorator
   	pair_select(BACKGROUND_TRANSCICTIONS)
   end
 
+  def cover_page_url
+    self.open? ? self.cover_page_path : '/assets/images/not_published/png'
+  end
+
   private
   	def pair_select(list)
   	  list.inject([]) do |result, t|

@@ -1,24 +1,34 @@
 class Post < ActiveRecord::Base
+  include Capybara::Webkit
   include Rails.application.routes.url_helpers
 
   ST_OPEN = 1
-  SEED = 'Ting'
+
+  QR_SEED = 'Ting'
   QR_SIZE = 300
+
+  SCREEN_SEED = 'Zhang'
+  SCREEN_WIDTH = 320
+  SCREEN_HEIGHT = 220
 
   after_save :screen_shot
   scope :recent , -> { order('created_at DESC') }
   scope :opened, -> { where(status: ST_OPEN) }
-  validates :title, presence: true
+  #validates :title, presence: true
   validates :content, presence: true
 
   belongs_to :user
 
+  def cover_page_path
+    '/assets/images/screenshot/' + Digest::MD5.hexdigest(SCREEN_SEED + self.id.to_s) + '.png'
+  end
+
   def cover_page_url
-    'http://upload.wikimedia.org/wikipedia/ms/3/35/Starbucks_Coffee_Logo.svg'
+    self.open? ? self.cover_page_path : '/assets/images/not_published.png'
   end
 
   def qr_image_path
-    'assets/images/qrcode/' + Digest::MD5.hexdigest(SEED + self.id.to_s) + '.png'
+    'assets/images/qrcode/' + Digest::MD5.hexdigest(QR_SEED + self.id.to_s) + '.png'
   end
 
   def open?
@@ -27,15 +37,30 @@ class Post < ActiveRecord::Base
 
   def publish
     if self.update(status: ST_OPEN)
+      qr_code
+    end
+  end
+
+  private
+
+    def post_root
+      if Rails.env.development?
+        '127.0.0.1:3000'
+      else
+        'www.slidemark.net'
+      end
+    end
+
+    def screen_shot
+      return unless self.open?
+      browser = Capybara::Webkit::Driver.new('web_capture').browser
+      browser.visit(post_root+ post_path(self))
+      browser.render('public/' + self.cover_page_path, SCREEN_WIDTH, SCREEN_HEIGHT)
+    end
+
+    def qr_code
       qr = RQRCode::QRCode.new(post_path(self), :size => 4, :level => :h )
       png = qr.to_img
       png.resize(QR_SIZE, QR_SIZE).save('public/' + self.qr_image_path)
     end
-  end
-
-  def screen_shot
-    #browser = Capybara::Webkit::Driver.new('web_capture').browser
-    #browser.visit 'http://qiita.com/'
-    #browser.render('qiita.png', 1280, 650)
-  end
 end

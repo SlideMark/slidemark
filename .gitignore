@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 /public/assets/images/qrcode/
+/public/assets/images/screenshot/
 /.config
 /log/
 /coverage/
