@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     end
 
     def render_500
-      render template: "errors/error_500", status:  500, layout: 'singin'
+      render template: "errors/error_500", status:  500, layout: 'signin'
     end
   end
 end
