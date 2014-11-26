@@ -17,6 +17,7 @@ gem 'redcarpet'
 gem 'bootstrap-modal-rails'
 gem 'digest'
 gem 'rqrcode_png'
+gem 'headless'
 gem 'capybara-webkit'
 gem 'therubyracer'
 

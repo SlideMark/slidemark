@@ -22,16 +22,16 @@ class ApplicationController < ActionController::Base
   end
 
   unless Rails.env.development?
-    rescue_from Exception, with: :render_500
+    #rescue_from Exception, with: :render_500
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
     rescue_from ActionController::RoutingError, with: :render_404
 
     def render_404
-      render template: "errors/error_404", status: 404, layout: 'signin', content_type: 'text/html'
+      render template: "errors/error_404", status: 404, content_type: 'text/html'
     end
 
     def render_500
-      render template: "errors/error_500", status:  500, layout: 'signin'
+      render template: "errors/error_500", status:  500
     end
   end
 end
