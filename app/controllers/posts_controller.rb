@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params.merge(user_id: current_user.id)).decorate
+    @post = Post.new(post_params.merge(user_id: current_user.id, title: 'dummy')).decorate
     if @post.save
       redirect_to posts_url, flash: {notice: I18n.t('model.post.create.success')}
       return
