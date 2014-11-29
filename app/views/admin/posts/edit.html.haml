@@ -3,9 +3,9 @@
 
 - if @post.errors.any?
   = render partial: 'alert_error', locals: { model: @post }
-= form_for :post, method: 'put', url: post_path(@post), html: { class: 'form-horizontal', role: 'form' } do |t|
+= form_for :post, method: 'put', url: admin_user_post_path, html: { class: 'form-horizontal', role: 'form' } do |t|
   = render partial: 'form', locals: { t: t}
   .form-group
     %center
       = t.submit 'save', class: ['btn', 'btn-lg', 'btn-primary']
-      = link_to t('model.post.show_ppt'), post_path, class: ['btn', 'btn-lg', 'btn-info']
+      = link_to t('model.post.show_ppt'), admin_user_post_path, class: ['btn', 'btn-lg', 'btn-info']

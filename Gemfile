@@ -18,7 +18,7 @@ gem 'bootstrap-modal-rails'
 gem 'digest'
 gem 'rqrcode_png'
 gem 'headless'
-gem 'capybara-webkit'
+gem 'imgkit'
 gem 'therubyracer'
 
 # Use sqlite3 as the database for Active Record

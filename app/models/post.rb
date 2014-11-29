@@ -1,5 +1,4 @@
 class Post < ActiveRecord::Base
-  include Capybara::Webkit
   include Rails.application.routes.url_helpers
 
   ST_OPEN = 1
@@ -53,9 +52,9 @@ class Post < ActiveRecord::Base
 
     def screen_shot
       return unless self.open?
-      browser = Capybara::Webkit::Driver.new('web_capture').browser
-      browser.visit(post_root+ post_path(self))
-      browser.render('public/' + self.cover_page_path, SCREEN_WIDTH, SCREEN_HEIGHT)
+      `/usr/local/bin/wkhtmltoimage --height #{SCREEN_HEIGHT} --width #{SCREEN_WIDTH} --format png #{post_root+ post_path(self)} - > #{'public/' + self.cover_page_path}`
+      #kit = IMGKit.new(post_root+ post_path(self))
+      #kit.to_file('public/' + self.cover_page_path)
     end
 
     def qr_code
