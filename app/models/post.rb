@@ -46,7 +46,7 @@ class Post < ActiveRecord::Base
       if Rails.env.development?
         '127.0.0.1:3000'
       else
-        'www.slidemark.net'
+        'http://www.slidemark.net'
       end
     end
 
@@ -58,7 +58,7 @@ class Post < ActiveRecord::Base
     end
 
     def qr_code
-      qr = RQRCode::QRCode.new(post_path(self), :size => 4, :level => :h )
+      qr = RQRCode::QRCode.new(post_root + post_path(self), :size => 4, :level => :h )
       png = qr.to_img
       png.resize(QR_SIZE, QR_SIZE).save('public/' + self.qr_image_path)
     end
