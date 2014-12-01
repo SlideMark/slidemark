@@ -4,7 +4,7 @@ class Admin::PostsController < AdminController
   layout 'ppt', only: ['show']
 
   def index
-    @posts = Post.recent.page(params[:page])
+    @posts = current_user.posts.recent.page(params[:page])
     respond_with(@posts)
   end
 
