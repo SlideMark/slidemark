@@ -22,5 +22,7 @@ module SlideMark
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
       html_tag.html_safe
     end
+    
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end

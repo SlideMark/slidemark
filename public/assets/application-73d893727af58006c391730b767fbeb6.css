@@ -1,3 +1,479 @@
+.or{
+  margin-top: -30px;
+  margin-left: 70px;
+  background:white;
+  display:block;
+  width: 160px;
+}
+.align-fb-login{
+  margin-left:0px;
+}
+
+.align-shared-links{
+  display:inline;
+}
+
+.white-space {
+  display:inline;
+  color:white;
+}
+/* line 4, /Users/g_dai/projects/slidemark/app/assets/stylesheets/posts.css.scss */
+#editor {
+  width: 80%;
+  height: 800px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  float: left;
+  margin: 0 auto;
+  border: 5px solid #e6e4e0;
+  font-size: 14px;
+}
+
+/* line 15, /Users/g_dai/projects/slidemark/app/assets/stylesheets/posts.css.scss */
+#panel {
+  width: 20%;
+  height: 800px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  float: right;
+  border: 5px;
+}
+
+/* line 27, /Users/g_dai/projects/slidemark/app/assets/stylesheets/posts.css.scss */
+.editor-container {
+  width: 100%;
+  height: 100% !important;
+  margin: 0px auto;
+  display: inline-block;
+}
+@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:500&text=Fork%20me%20on%20GitHub);
+
+body{
+  overflow-x: hidden;
+}
+
+.ribbon{
+  position: absolute; 
+  top: 42px;
+  width: 200px;
+  padding: 1px 0;
+  background: #000;
+  color: #eee;
+
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.ribbon.left{
+  left: -42px;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.ribbon.right{
+  right: -42px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ribbon a, 
+.ribbon a:visited, 
+.ribbon a:active, 
+.ribbon a:hover{
+  display: block;
+  padding: 1px 0;
+  height: 24px;
+  line-height: 24px;
+
+  color: inherit;  
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+  -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+  text-shadow: 0 0 10px rgba(0,0,0,0.31);
+}
+
+.ribbon.black{
+  background: #000;
+}
+
+.ribbon.red{
+  background: #c00;
+}
+
+.ribbon.blue{
+  background: #09e;
+}
+
+.ribbon.green{
+  background: #0a0;
+}
+
+.ribbon.orange{
+  background: #d80;
+}
+
+.ribbon.purple{
+  background: #c0c;
+}
+
+.ribbon.grey{
+  background: #888;
+}
+
+.ribbon.white{
+  background: #eee;
+  color: black;
+}
+.ribbon.white a{
+  border: 2px dotted rgba(100,100,100,0.2);
+}
+
+.ribbon.top{
+  z-index:9999;
+}
+/* line 1, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /Users/g_dai/projects/slidemark/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 4, /Users/g_dai/projects/slidemark/app/assets/stylesheets/welcome.css.scss */
+#inputSearch {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+ */
+
+ .footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* CUSTOMIZE THE NAVBAR
+ * -------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-wrapper .navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+ * -------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 600px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 600px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 600px;
+}
+
+
+
+/* MARKETING CONTENT
+ * -------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+ * ------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+ * -------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-left:  0;
+    padding-right: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin-for-regist {
+  max-width: 500px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin-for-regist .form-signin-for-regist-heading,
+.form-signin-for-regist .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin-for-regist .checkbox {
+  font-weight: normal;
+}
+.form-signin-for-regist .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin-for-regist .form-control:focus {
+  z-index: 2;
+}
+.form-signin-for-regist input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin-for-regist input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
 /*!
  * Bootstrap v3.3.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -5,6 +481,7 @@
  */
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -267,8 +744,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('/assets/glyphicons-halflings-regular.eot');
-  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6356,3 +6833,218 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+
+.modal-open {
+	overflow: hidden;
+}
+
+
+/* add a scroll bar to stop page from jerking around */
+.modal-open.page-overflow .page-container,
+.modal-open.page-overflow .page-container .navbar-fixed-top,
+.modal-open.page-overflow .page-container .navbar-fixed-bottom,
+.modal-open.page-overflow .modal-scrollable {
+	overflow-y: scroll;
+}
+
+@media (max-width: 979px) {
+	.modal-open.page-overflow .page-container .navbar-fixed-top,
+	.modal-open.page-overflow .page-container .navbar-fixed-bottom  {
+		overflow-y: visible;
+	}
+}
+
+
+.modal-scrollable {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+}
+
+.modal {
+	outline: none;
+	position: absolute;
+	margin-top: 0;
+	top: 50%;
+	overflow: visible; /* allow content to popup out (i.e tooltips) */
+}
+
+.modal.fade {
+	top: -100%;
+	-webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;	
+	   -moz-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+	     -o-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+	        transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+}
+
+.modal.fade.in {
+	top: 50%;
+}
+
+.modal-body {
+	max-height: none;
+	overflow: visible;
+}
+
+.modal.modal-absolute {
+	position: absolute;
+	z-index: 950;
+}
+
+.modal .loading-mask {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	border-radius: 6px;
+}
+
+.modal-backdrop.modal-absolute{
+	position: absolute;
+	z-index: 940;
+}
+
+.modal-backdrop, 
+.modal-backdrop.fade.in{
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	background: #fff;
+}
+
+.modal.container {
+  width: 940px;
+  margin-left: -470px;
+}
+
+/* Modal Overflow */
+
+.modal-overflow.modal {
+	top: 1%;
+}
+
+.modal-overflow.modal.fade {
+	top: -100%;
+}
+
+.modal-overflow.modal.fade.in {
+	top: 1%;
+}
+
+.modal-overflow .modal-body {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Responsive */
+
+@media (min-width: 1200px) {
+	.modal.container {
+		width: 1170px;
+		margin-left: -585px;
+	}
+}
+
+@media (max-width: 979px) {
+	.modal, 
+	.modal.container,
+	.modal.modal-overflow 	{
+		top: 1%;
+		right: 1%;
+		left: 1%;
+		bottom: auto;
+		width: auto !important;
+		height: auto !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	
+	.modal.fade.in, 
+	.modal.container.fade.in,
+	.modal.modal-overflow.fade.in {
+		top: 1%;
+		bottom: auto;
+	}
+	
+	.modal-body,
+	.modal-overflow .modal-body {
+		position: static;
+		margin: 0;
+		height: auto !important;
+		max-height: none !important;
+		overflow: visible !important;
+	}
+	
+	.modal-footer,
+	.modal-overflow .modal-footer {
+		position: static;
+	}
+}
+
+.loading-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -12px 0 0 -12px;
+}
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden*/
+
+.animated {
+	-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+.shake {
+	-webkit-animation-name: shake;
+	-moz-animation-name: shake;
+	-o-animation-name: shake;
+	animation-name: shake;
+}
