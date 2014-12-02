@@ -6,11 +6,12 @@
   My PPT
 = render 'layouts/messages'
 
-- if @posts.present?
-  - @posts.each_slice(4) do |sub_posts|
-    .container
-      .row= render partial: 'ppt', locals: { posts: sub_posts}    
-      %hr/
+- cache(cache_key_for_posts) do
+  - if @posts.present?
+    - @posts.each_slice(4) do |sub_posts|
+      .container
+        .row= render partial: 'ppt', locals: { posts: sub_posts}    
+        %hr/
 
   %center= paginate @posts
 

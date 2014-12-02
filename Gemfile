@@ -20,6 +20,7 @@ gem 'rqrcode_png'
 gem 'headless'
 gem 'imgkit'
 gem 'therubyracer'
+gem 'redis-rails'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'

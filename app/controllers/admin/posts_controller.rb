@@ -2,7 +2,8 @@ class Admin::PostsController < AdminController
   respond_to :html
   load_and_authorize_resource
   layout 'ppt', only: ['show']
-
+  helper PostsHelper
+  
   def index
     @posts = current_user.posts.recent.page(params[:page])
     respond_with(@posts)

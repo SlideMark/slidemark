@@ -24,5 +24,7 @@ module SlideMark
     end
     
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    
+    config.cache_store = :redis_store
   end
 end
