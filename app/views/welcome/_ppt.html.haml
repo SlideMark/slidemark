@@ -5,7 +5,7 @@
     %p
       %a.btn.btn-default{:href => "http://www.facebook.com/sharer/sharer.php?u="+post_url(post) , :target => "_blank"} Facebook share      
       %a.btn.btn-default{:href => "http://www.linkedin.com/shareArticle?mini=true&url="+post_url(post), :role => "button"} Linkedin share
-      = link_to 'QR', post.qr_image_path, class: ['btn', 'btn-default']
+      = link_to 'QR', post.qr_image_path, class: ['btn', 'btn-default', 'btn-qrcode']
 	  
 	  
 	  
