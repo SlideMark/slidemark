@@ -28,7 +28,7 @@ $(".fb_share").click(function(){
 
 $(function() {
 	$("a.btn-qrcode").hover(function(e){
-		$("body").append("<img id='tmp-qrcode' src='"+ this.href + "' width='150' height='150' alt='qr code'/>");
+		$("body").append("<img id='tmp-qrcode' src='"+ this.href + "' width='200' height='200' alt='qr code'/>");
 		$("#tmp-qrcode")
 			.css("position", "absolute")
 			.css("top", (e.pageY - 50) + "px")
