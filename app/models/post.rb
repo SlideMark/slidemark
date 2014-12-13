@@ -23,8 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def simple
-    if self.content.present?
-      return self.content.split(/^--/)[0]
+    return self.content.split(/^--/)[0] if self.content.present?
     return nil
   end
 
