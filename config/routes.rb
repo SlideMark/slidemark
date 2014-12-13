@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
 
-  resources :posts
+  resources :posts do
+    member do
+      get 'simple'
+    end
+  end
 
   namespace :admin do
     resources :users do

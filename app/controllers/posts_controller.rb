@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   respond_to :html
   load_and_authorize_resource
   layout 'ppt', only: ['show']
+  layout 'simple', only: ['simple']
 
   def index
     @posts = Post.recent.page(params[:page])
@@ -9,6 +10,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    respond_with(@post)
+  end
+
+  def simple
     respond_with(@post)
   end
 

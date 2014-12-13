@@ -40,6 +40,7 @@ class Ability
     can [:show], Post, status: 1
     can [:show], Post, user_id: user.id
 
+    can [:simple], Post
     # User control
     can :home, User
     can :list, User, user_id: user.id

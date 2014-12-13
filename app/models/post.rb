@@ -22,6 +22,12 @@ class Post < ActiveRecord::Base
     '/assets/images/screenshot/' + Digest::MD5.hexdigest(SCREEN_SEED + self.id.to_s) + '.png'
   end
 
+  def simple
+    if self.content.present?
+      return self.content.split(/^--/)[0]
+    return nil
+  end
+
   def cover_page_url
     self.open? ? self.cover_page_path : '/assets/images/not_published.png'
   end
@@ -52,7 +58,7 @@ class Post < ActiveRecord::Base
 
     def screen_shot
       return unless self.open?
-      `/usr/local/bin/wkhtmltoimage --height #{SCREEN_HEIGHT} --width #{SCREEN_WIDTH} --format png #{post_root+ post_path(self)} - > #{'public/' + self.cover_page_path}`
+      system("/usr/local/bin/wkhtmltoimage --height #{SCREEN_HEIGHT} --width #{SCREEN_WIDTH} --format png #{post_root+ simple_post_path(self)} - > #{'public/' + self.cover_page_path}")
       #kit = IMGKit.new(post_root+ post_path(self))
       #kit.to_file('public/' + self.cover_page_path)
     end
