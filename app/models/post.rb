@@ -57,7 +57,7 @@ class Post < ActiveRecord::Base
 
     def screen_shot
       return unless self.open?
-      system("/usr/local/bin/wkhtmltoimage --height #{SCREEN_HEIGHT} --width #{SCREEN_WIDTH} --format png #{post_root+ simple_post_path(self)} - > #{'public/' + self.cover_page_path}")
+      system("/usr/local/bin/wkhtmltoimage --height #{SCREEN_HEIGHT} --width #{SCREEN_WIDTH} --format png #{post_root+ simple_post_path(self)} - > #{'public' + self.cover_page_path}")
       #kit = IMGKit.new(post_root+ post_path(self))
       #kit.to_file('public/' + self.cover_page_path)
     end
